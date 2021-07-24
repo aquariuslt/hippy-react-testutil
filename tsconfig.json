@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
     "module": "esnext",
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true,
     "declaration": true,
     "removeComments": true,
     "noLib": false,
@@ -12,11 +14,18 @@
     "target": "es6",
     "sourceMap": false,
     "skipLibCheck": true,
-    "rootDir": "./src",
-    "outDir": "./dist"
+    "rootDir": "./",
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "paths": {
+      "@localTypes/*": [
+        "temp/types/*"
+      ]
+    }
   },
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "temp/**/*"
   ],
   "exclude": [
     "node_modules",

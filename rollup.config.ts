@@ -1,7 +1,9 @@
+import typescript from '@rollup/plugin-typescript';
+import replace from '@rollup/plugin-replace';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 
 export default {
-  input: 'src/test-entry.ts',
+  input: 'temp/hippy-react/index.ts',
 
   output: {
     file: 'dist/index.cjs.js',
@@ -9,6 +11,12 @@ export default {
   },
 
   plugins: [
-    nodeResolve()
+    replace({
+      __PLATFORM__: 'android'
+    }),
+
+    nodeResolve(),
+    typescript()
   ]
 };
+// __PLATFORM__
