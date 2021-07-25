@@ -3,13 +3,14 @@
     "module": "esnext",
     "jsx": "react",
     "allowSyntheticDefaultImports": true,
-    "declaration": true,
+    "declaration": false,
     "removeComments": true,
     "noLib": false,
     "emitDecoratorMetadata": true,
     "resolveJsonModule": true,
     "experimentalDecorators": true,
     "noImplicitAny": false,
+    "esModuleInterop": true,
     "moduleResolution": "node",
     "target": "es6",
     "sourceMap": false,
@@ -21,7 +22,11 @@
       "@localTypes/*": [
         "temp/types/*"
       ]
-    }
+    },
+    "typeRoots": [
+      "./node_modules/@types",
+      "src/css-shims.d.ts"
+    ]
   },
   "include": [
     "src/**/*",
